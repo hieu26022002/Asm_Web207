@@ -17,7 +17,7 @@
 
 </head>
 
-<body ng-app="clientModule">
+<body ng-app="clientApp">
     <div class="container mx-auto">
         <!-- Start Header -->
         <!-- Nhúng các layout ko muốn load lại khi sang trang mới -->
@@ -29,14 +29,15 @@
         <div ng-include="'component/FooterClient.html'"></div>
         <!-- End Header -->
 
-    <!-- API -->
-    <script>
-        const API = "http://localhost:3000"
-    </script>
+        <!-- API -->
+        <script>
+            const API = "http://localhost:3000"
+        </script>
 
         <!-- AngularJs -->
         <script src="./lib/angular.js"></script>
         <script src="./lib/angular-route.js"></script>
+        <script src="./js/shop.js"></script>
         <script src="./route.js"></script>
 
         <!-- Js for this page -->

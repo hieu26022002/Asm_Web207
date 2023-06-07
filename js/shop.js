@@ -8,35 +8,33 @@ const listProductsController = ($scope, $http) => {
     })
 }
 
-const paginateController = ($scope, $http) => {
+const paginateController = function ($scope, $http) {
     $scope.currentPage = 1; // Trang hiện tại
     $scope.itemsPerPage = 8; // Số sản phẩm hiển thị trên mỗi trang
     $scope.totalItems = 0; // Tổng số sản phẩm
-    $scope.products = []; // Danh sách sản phẩm
+    $scope.products = []; // Danh sách sản phẩm trên trang hiện tại
 
-    // Gửi yêu cầu GET để lấy dữ liệu sản phẩm từ server
-    $http.get(API + `/products?_page=${$scope.currentPage}&_limit=8`)
-        .then(function (response) {
-            // Gán dữ liệu sản phẩm và tính toán số trang
-            $scope.products = response.data;
-            $scope.totalItems = $scope.products.length;
-            $scope.totalPages = Math.ceil($scope.totalItems / $scope.itemsPerPage);
-        })
-        .catch(function (error) {
-            // Xử lý khi xảy ra lỗi trong quá trình lấy dữ liệu
-        });
+    // Lấy danh sách sản phẩm từ JSON Server
+    $scope.getProducts = function () {
+        var url = API + `/products?_page=` + $scope.currentPage + `&_limit=` + $scope.itemsPerPage;
+        $http.get(url)
+            .then(function (response) {
+                $scope.products = response.data;
+                $scope.totalItems = parseInt(response.headers('X-Total-Count'));
+                console.log($scope.products);
 
-    // Hàm chuyển đổi trang
+            })
+            .catch(function (error) {
+                console.log('Lỗi khi lấy danh sách sản phẩm:', error);
+            });
+    };
+
+    // Chuyển đến trang mới
     $scope.goToPage = function (pageNumber) {
-        if (pageNumber >= 1 && pageNumber <= $scope.totalPages) {
+            console.log("Chuyển page?");
             $scope.currentPage = pageNumber;
-        }
+            $scope.getProducts();
     };
-
-    // Lấy danh sách sản phẩm hiển thị trên trang hiện tại
-    $scope.getProductsForCurrentPage = function () {
-        var startIndex = ($scope.currentPage - 1) * $scope.itemsPerPage;
-        var endIndex = startIndex + $scope.itemsPerPage;
-        return $scope.products.slice(startIndex, endIndex);
-    };
+    // Khởi tạo
+    $scope.getProducts();
 }
