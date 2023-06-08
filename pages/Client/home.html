@@ -109,7 +109,7 @@
 
 <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
     <div class="w-full relative flex items-center justify-center">
-        <button aria-label="slide backward"
+        <button aria-label="slide backward" onclick="goPrev()"
             class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
             id="prev">
             <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
@@ -281,7 +281,7 @@
         </div>
         <button aria-label="slide forward"
             class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
-            id="next">
+            id="next" onclick="goNext()">
             <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -629,6 +629,28 @@
 
 <!-- Carousel -->
 <script>
+    openMenu = () => {
+        document.getElementById("md-menu").classList.add("md:block");
+    };
+    closeMenu = () => {
+        document.getElementById("md-menu").classList.remove("md:block");
+    };
+    openSearchMenu = () => {
+        document.getElementById("mobile-search-menu").classList.remove("hidden");
+    };
+    closeSearchMenu = () => {
+        document.getElementById("mobile-search-menu").classList.add("hidden");
+    };
+    openSmMenu = () => {
+        document.getElementById("mobile-menu").classList.remove("hidden");
+    };
+    closeSmMenu = () => {
+        document.getElementById("mobile-menu").classList.add("hidden");
+    };
+
+</script>
+<!-- Carousel -->
+<script>
     let defaultTransform = 0;
     function goNext() {
         defaultTransform = defaultTransform - 398;
@@ -636,12 +658,12 @@
         if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7) defaultTransform = 0;
         slider.style.transform = "translateX(" + defaultTransform + "px)";
     }
-    next.addEventListener("click", goNext);
+    // next.addEventListener("click", goNext);
     function goPrev() {
         var slider = document.getElementById("slider");
         if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
         else defaultTransform = defaultTransform + 398;
         slider.style.transform = "translateX(" + defaultTransform + "px)";
     }
-    prev.addEventListener("click", goPrev);
+    // prev.addEventListener("click", goPrev);
 </script>
