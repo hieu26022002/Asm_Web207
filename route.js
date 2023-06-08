@@ -1,12 +1,14 @@
 const clientApp = angular.module("clientApp", ["ngRoute"]);
 
 clientApp.controller("paginateController",paginateController)
+clientApp.controller("listBestSellerController", listBestSellerController)
 // Route client App
 clientApp.config(($routeProvider, $locationProvider) => {
     $locationProvider.hashPrefix("")
 
     $routeProvider.when("/", {
-        templateUrl: './pages/Client/home.html'
+        templateUrl: './pages/Client/home.html',
+        controller: "listBestSellerController"
     })
     .when("/products", {
         templateUrl: './pages/Client/shop.html',
