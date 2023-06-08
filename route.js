@@ -17,17 +17,19 @@ clientApp.config(($routeProvider, $locationProvider) => {
         templateUrl: './pages/Client/blogs.html'
     }).when("/checkout", {
         templateUrl: './pages/Client/checkout.html',
+    }).otherwise({
+        redirectTo: "/"
     })
 
 })
 
-const adminApp = angular.module("adminModule",["ngRoute"]);
+// const adminApp = angular.module("adminApp",["ngRoute"]);
 
-// Route admin App
-adminApp.config(($routeProvider, $location, $locationProvider) => {
-    $locationProvider.hashPrefix("");
+// // Route admin App
+// adminApp.config(($routeProvider, $locationProvider) => {
+//     $locationProvider.hashPrefix("");
 
-    // $routeProvider.when("/admin", {
-
-    // })
-})
+//     $routeProvider.when("/", {
+//         templateUrl: "./pages/Admin/home.html"
+//     })
+// })
