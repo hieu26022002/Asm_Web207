@@ -21,8 +21,6 @@ const paginateController = function ($scope, $http) {
             .then(function (response) {
                 $scope.products = response.data;
                 $scope.totalItems = parseInt(response.headers('X-Total-Count'));
-                console.log($scope.products);
-
             })
             .catch(function (error) {
                 console.log('Lỗi khi lấy danh sách sản phẩm:', error);
@@ -31,7 +29,6 @@ const paginateController = function ($scope, $http) {
 
     // Chuyển đến trang mới
     $scope.goToPage = function (pageNumber) {
-            console.log("Chuyển page?");
             $scope.currentPage = pageNumber;
             $scope.getProducts();
     };
