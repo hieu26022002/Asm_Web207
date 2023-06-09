@@ -37,9 +37,11 @@
                             <button
                                 class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
                                 to cart</button>
-                            <button
-                                class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">View
-                                Detail</button>
+                            <a href="#product/{{prd.id}}">
+                                <button
+                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">View Detail
+                                </button>
+                            </a>
                         </div>
                     </div>
                     <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">{{ prd.name }}
