@@ -1,0 +1,89 @@
+<!-- <h1 class="text-xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Thêm sản phẩm</span>
+</h1>
+<div class="mb-6">
+    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tên sản
+        phẩm:</label>
+    <input type="text" id="default-input" ng-model="newProduct.name"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<div class="mb-6">
+    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Giá:</label>
+    <input type="number" min="0" id="default-input" ng-model="newProduct.price"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Chọn danh mục</label>
+<select id="countries" ng-model="newProduct.category_id"
+    ng-options="category.id as category.name for category in categories"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option selected value="">Chọn danh mục</option>
+</select>
+<label for="message" class="block mb-2 mt-5 text-sm font-medium text-gray-900 dark:text-white">Overview:</label>
+<textarea id="message" rows="4" ng-model="newProduct.overview"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Write your thoughts here..."></textarea>
+<label for="message" class="block mb-2 mt-5 text-sm font-medium text-gray-900 dark:text-white">Description:</label>
+<textarea id="message" rows="4" ng-model="newProduct.description"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Write your thoughts here..."></textarea>
+
+<label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+<input
+    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+    id="file_input" type="file" ng-model="fileImg" ng-change="onFileSelect(fileImg)" accept="image/*">
+ ng-file-select="onFileSelect($files)"  
+<button ng-click="addProduct()"
+    class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+    <span
+        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        Thêm sản phẩm
+    </span>
+</button> -->
+
+
+<h1 class="text-xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+    <span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Thêm sản phẩm</span>
+</h1>
+<div class="mb-6">
+    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tên sản
+        phẩm:</label>
+    <input type="text" id="default-input" ng-model="products.name"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<div class="mb-6">
+    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Giá:</label>
+    <input type="number" min="0" id="default-input" ng-model="products.price"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<div class="mb-6">
+    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Đường link ảnh:</label>
+    <input type="text" id="default-input" ng-model="products.img"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+</div>
+<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Chọn danh mục</label>
+<select id="countries" ng-model="products.category_id"
+    ng-options="category.id as category.name for category in categories"
+    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option selected value="">Chọn danh mục</option>
+</select>
+<label for="message" class="block mb-2 mt-5 text-sm font-medium text-gray-900 dark:text-white">Overview:</label>
+<textarea id="message" rows="4" ng-model="products.overview"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Write your thoughts here..."></textarea>
+<label for="message" class="block mb-2 mt-5 text-sm font-medium text-gray-900 dark:text-white">Description:</label>
+<textarea id="message" rows="4" ng-model="products.description"
+    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    placeholder="Write your thoughts here..."></textarea>
+
+<!--    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Upload file</label>
+ <input
+    class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+    id="file_input" type="file" ng-model="fileImg" ng-change="onFileSelect(fileImg)" accept="image/*">
+ng-file-select="onFileSelect($files)"  -->
+<button ng-click="addProduct()"
+    class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+    <span
+        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+        Thêm sản phẩm
+    </span>
+</button>

@@ -29,8 +29,8 @@ const paginateController = function ($scope, $http) {
 
     // Chuyển đến trang mới
     $scope.goToPage = function (pageNumber) {
-            $scope.currentPage = pageNumber;
-            $scope.getProducts();
+        $scope.currentPage = pageNumber;
+        $scope.getProducts();
     };
     // Khởi tạo
     $scope.getProducts();

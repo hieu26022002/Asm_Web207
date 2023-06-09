@@ -296,6 +296,7 @@
 
         adminApp.controller("listProducts", listProducts)
         adminApp.controller("deleteController", deleteController)
+        adminApp.controller("addController", addController)
         // Route admin App
         adminApp.config(($routeProvider, $locationProvider) => {
             $locationProvider.hashPrefix("");
@@ -305,9 +306,12 @@
             }).when("/products", {
                 templateUrl: "./pages/Admin/listproducts.html",
                 controller: "listProducts"
-            }).when("/delete/:id", {
+            }).when("/product/delete/:id", {
                 templateUrl: "./pages/Admin/listproducts.html",
                 controller: "deleteController"
+            }).when("/product/add",{
+                templateUrl: "./pages/Admin/formproducts.html",
+                controller: "addController"
             })
         })
     </script>
