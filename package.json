@@ -1,8 +1,9 @@
 {
   "dependencies": {
-    "json-server": "^0.17.3"
+    "json-server": "^0.17.3",
+    "json-server-auth": "^2.1.0"
   },
   "scripts": {
-    "server": "json-server --watch db.json --port 3001"
+    "server": "json-server-auth --watch db.json --port 3001"
   }
 }

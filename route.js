@@ -2,6 +2,7 @@ const clientApp = angular.module("clientApp", ["ngRoute"]);
 
 clientApp.controller("paginateController", paginateController)
 clientApp.controller("listBestSellerController", listBestSellerController)
+clientApp.controller("detailProduct", detailProduct)
 // Route client App
 clientApp.config(($routeProvider, $locationProvider) => {
     $locationProvider.hashPrefix("")
@@ -14,7 +15,8 @@ clientApp.config(($routeProvider, $locationProvider) => {
             templateUrl: './pages/Client/shop.html',
             controller: "paginateController"
         }).when("/product/:id", {
-            templateUrl: './pages/Client/detail.html'
+            templateUrl: './pages/Client/detail.html',
+            controller: "detailProduct"
         }).when("/blogs", {
             templateUrl: './pages/Client/blogs.html'
         }).when("/checkout", {
