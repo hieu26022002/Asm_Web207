@@ -1,3 +1,10 @@
+const detailProduct = function ($scope, $http, $routeParams) {
+    const id = $routeParams.id
+    $scope.detail = {}
+    $http.get(API + '/products/' + id).then(function (res) {
+        $scope.detail = res.data
+    })
+}
 
 const paginateController = function ($scope, $http) {
     $scope.currentPage = 1; // Trang hiện tại
@@ -61,3 +68,4 @@ const paginateController = function ($scope, $http) {
     // Khởi tạo
     $scope.getProducts();
 }
+
