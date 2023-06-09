@@ -184,25 +184,25 @@ const listProducts = function ($scope, $http) {
     $scope.getProducts();
 }
 
-function editController($scope, $http, $routeParams) {
+function editController($scope, $http, $routeParams,$location) {
     const id = $routeParams.id;
-    $scope.product = {
-        id: 0,
-        name: "",
-        price: 0,
-        img: "",
-        overview: "",
-        description: "",
-        address: "",
-        category_id: 0,
-    }
+    $scope.categories = [];
+    $scope.product = {}
     $http.get(API + '/products/' + id).then(function (res) {
-        $scope.product = res.product
+        $scope.product = res.data
     })
 
+    $scope.getCategories = function () {
+        $http.get(API + '/categories')
+            .then(function (response) {
+                $scope.categories = response.data;
+            });
+    };
+    $scope.getCategories()
     $scope.accept = function () {
         $http.put(API + "/products/" + id, $scope.product).then(function () {
             alert("Sửa thành công");
+            $location.path("/products")
         })
     }
 }
