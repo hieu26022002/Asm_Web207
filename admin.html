@@ -20,7 +20,7 @@
     <div class="flex flex-no-wrap">
         <!-- Sidebar starts -->
         <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
-        <div style="min-height: 1000px"
+        <div style="height: 1001px;"
             class="w-64 absolute sm:relative bg-gray-800 shadow md:h-full flex-col justify-between hidden sm:flex">
             <div class="px-8">
                 <!-- Logo PC -->
@@ -285,6 +285,7 @@
 
     <script src="./lib/angular.js"></script>
     <script src="./lib/angular-route.js"></script>
+    <script src="./js/products.js"></script>
 
     <script>
         const API = "http://localhost:3001"
@@ -293,6 +294,8 @@
     <script>
         const adminApp = angular.module("adminApp", ["ngRoute"]);
 
+        adminApp.controller("listProducts", listProducts)
+        adminApp.controller("deleteController", deleteController)
         // Route admin App
         adminApp.config(($routeProvider, $locationProvider) => {
             $locationProvider.hashPrefix("");
@@ -300,7 +303,11 @@
             $routeProvider.when("/", {
                 templateUrl: "./pages/Admin/home.html"
             }).when("/products", {
-                templateUrl: "./pages/Admin/listproducts.html"
+                templateUrl: "./pages/Admin/listproducts.html",
+                controller: "listProducts"
+            }).when("/delete/:id", {
+                templateUrl: "./pages/Admin/listproducts.html",
+                controller: "deleteController"
             })
         })
     </script>
