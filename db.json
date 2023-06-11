@@ -324,9 +324,17 @@
   "users": [
     {
       "email": "dyy123@gmail.com",
-      "password": "$2a$10$kpkT5tKXifSCIJ1Z4pJWcupqr7OM4vgdbUw885hKVyE9KbQooKWMG",
+      "password": "$2a$10$kLXOmq1OpXdSxeVRt6cS3.4GbFMO/3wQLz1o6RASUi7TxTigoXOw6",
       "name": "Dyyy",
+      "img": "https://res.cloudinary.com/dielvkumg/image/upload/v1686497634/TN_vp1ays.jpg",
       "id": 1
+    },
+    {
+      "email": "nqdy@gmail.com",
+      "password": "$2a$10$Vna96NXo5QNst16E2LIi5OFfUx2Ff3vb5ab1UNBAOnQY44LhFkSHK",
+      "name": "Nguyễn Duy",
+      "img": "https://res.cloudinary.com/dielvkumg/image/upload/v1686497634/TN_vp1ays.jpg",
+      "id": 2
     }
   ]
 }

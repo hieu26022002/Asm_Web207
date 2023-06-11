@@ -42,6 +42,17 @@
         <script src="./js/index.js"></script>
         <script src="./route.js"></script>
 
+        <script>
+            function logout() {
+                alert("Bạn đã đăng xuất!!!")
+                localStorage.removeItem("accessToken")
+                sessionStorage.removeItem("userId")
+                sessionStorage.removeItem("userName")
+                sessionStorage.removeItem("email")
+                sessionStorage.removeItem("img")
+                window.location.href = "/"
+            }
+        </script>
         <!-- Js for this page -->
         <!-- Header -->
         <script>

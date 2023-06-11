@@ -9,11 +9,8 @@ const listCatalogController = ($scope, $http) => {
 }
 
 const listBestSellerController = function ($scope, $http) {
-    $scope.bestSellerList = [];
-
     $http.get(API + "/products?_sort=amount&_order=desc&_limit=8").then((res) => {
         $scope.bestSellerList = res.data
-        console.log("Data ne`:", $scope.bestSellerList);
     }).catch(() => {
         alert("Đã có lỗi xảy ra!!!")
     })
