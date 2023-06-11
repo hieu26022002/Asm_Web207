@@ -15,7 +15,7 @@
       </style>
 </head>
 
-<body>
+<body ng-app="registerApp" ng-controller="authController">
     <div class="container mx-auto h0">
         <div class="bg-indigo-50">
             <div
@@ -25,8 +25,10 @@
                 </div>
                 <div
                     class="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
-                    <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Join to us</p>
-                    <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500"> Already have an account? <a href="javascript:void(0)"
+                    <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Join to
+                        us</p>
+                    <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">
+                        Already have an account? <a href="./login.html"
                             class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer">
                             Login here</a></p>
                     <button aria-label="Continue with google" role="button"
@@ -50,20 +52,29 @@
                         <hr class="w-full bg-gray-400" />
                     </div>
                     <div class="mb-6 w-full">
-                        <label for="email" class="text-sm font-medium leading-none text-gray-800"> User Name </label>
-                        <input id="email" aria-labelledby="email" type="email"
-                            class="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"/>
+                        <label for="name" class="text-sm font-medium leading-none text-gray-800"> User Name </label>
+                        <input id="name" aria-labelledby="name" type="text" placeholder="e.g: NqDy^^"
+                            ng-model="registerData.name" required
+                            class="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" />
+                        <span ng-show="registerForm.name.$dirty && registerForm.name.$error.required">User name is
+                            required</span>
+                    </div>
+                    <div class="mb-6 w-full">
+                        <label for="img" class="text-sm font-medium leading-none text-gray-800"> Link Avatar </label>
+                        <input id="img" aria-labelledby="img" type="text" ng-model="registerData.img" required
+                            class="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" />
                     </div>
                     <div>
                         <label for="email" class="text-sm font-medium leading-none text-gray-800"> Email </label>
-                        <input id="email" aria-labelledby="email" type="email"
+                        <input id="email" aria-labelledby="email" type="email" ng-model="registerData.email" required
                             class="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2"
-                            placeholder="e.g: john@gmail.com " />
+                            placeholder="e.g: john@gmail.com" />
+                        <span ng-show="registerForm.email.$error.required">Email is required</span>
                     </div>
                     <div class="mt-6 w-full">
                         <label for="myInput" class="text-sm font-medium leading-none text-gray-800"> Password </label>
                         <div class="relative flex items-center justify-center">
-                            <input id="myInput" type="password"
+                            <input id="myInput" type="password" ng-model="registerData.password"
                                 class="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
                             <div class="absolute right-0 mt-2 mr-3 cursor-pointer" onclick="showPassword()">
                                 <div id="show">
@@ -76,9 +87,10 @@
                                 </div>
                             </div>
                         </div>
+                        <span ng-show="registerForm.password.$error.required">Password is required</span>
                     </div>
                     <div class="mt-8">
-                        <button role="button"
+                        <button role="button" ng-click="register()" ng-disabled="registerForm.$invalid"
                             class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Create
                             my account</button>
                     </div>
@@ -114,7 +126,41 @@
         </div>
     </div>
     </div>
+    <script src="./lib/angular.js"></script>
+    <script src="./lib/angular-route.js"></script>
+    <script src="./js/authenticate.js"></script>
+    <script>
+        const API = "http://localhost:3001"
+    </script>
 
+    <script>
+        const registerApp = angular.module("registerApp", ["ngRoute"]);
+        registerApp.config(['$locationProvider', function ($locationProvider) {
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });;
+        }]);
+        registerApp.controller("authController", authController)
+    </script>
+
+    <!-- tailwind css -->
+    <script>
+        function showPassword() {
+            var passwordType = document.getElementById("myInput");
+            var show = document.getElementById("show");
+            var hide = document.getElementById("hide");
+            if (passwordType.type === "password") {
+                passwordType.type = "text";
+                hide.classList.remove("hidden");
+                show.classList.add("hidden");
+            } else {
+                passwordType.type = "password";
+                hide.classList.add("hidden");
+                show.classList.remove("hidden");
+            }
+        }
+    </script>
     <!-- tailwind css -->
     <script>
         function showPassword() {

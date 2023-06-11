@@ -14,6 +14,7 @@
           }
         }
       </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 
 </head>
 
@@ -41,6 +42,17 @@
         <script src="./js/index.js"></script>
         <script src="./route.js"></script>
 
+        <script>
+            function logout() {
+                alert("Bạn đã đăng xuất!!!")
+                localStorage.removeItem("accessToken")
+                sessionStorage.removeItem("userId")
+                sessionStorage.removeItem("userName")
+                sessionStorage.removeItem("email")
+                sessionStorage.removeItem("img")
+                window.location.href = "/"
+            }
+        </script>
         <!-- Js for this page -->
         <!-- Header -->
         <script>
@@ -114,6 +126,8 @@
             }
         </script>
         <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
 </body>
 
 </html>

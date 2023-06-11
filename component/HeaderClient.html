@@ -1,4 +1,4 @@
-<div class="dark:bg-gray-900 -mb-7">
+<div class="dark:bg-gray-900 -mb-7" ng-controller="headerController">
     <div class="2xl:container 2xl:mx-auto md:py-5 lg:px-20 md:px-6 p-4">
         <div class="flex items-center justify-between">
             <div class="lg:w-3/12">
@@ -45,10 +45,6 @@
                                 class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Shop</a>
                         </li>
                         <li>
-                            <a href="/admin.html#/dashboard"
-                                class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Pages</a>
-                        </li>
-                        <li>
                             <a href="#blogs"
                                 class="dark:text-white dark:hover:text-gray-300 text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">Blog</a>
                         </li>
@@ -76,6 +72,85 @@
                         alt="bag">
                     <img class=" dark:block hidden"
                         src="https://tuk-cdn.s3.amazonaws.com/can-uploader/navigation-VI-svg5dark.svg" alt="bag">
+                </a>
+                <a ng-if="isLogin">
+                    <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
+                        class="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white"
+                        type="button">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-8 h-8 mr-2 rounded-full" src="{{ avatarUser }}" alt="user photo">
+                        {{nameUser}}
+                        <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatarName" ng-if="isLogin"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
+                            <div class="font-medium ">Email User: </div>
+                            <div class="truncate">{{ email }}</div>
+                        </div>
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                            <li>
+                                <a href="/admin.html#/dashboard"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                        </ul>
+                        <div class="py-2">
+                            <a onclick="logout()"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
+                                out</a>
+                        </div>
+                    </div>
+
+                </a>
+                <a ng-if="!isLogin">
+                    <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName"
+                        class="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white"
+                        type="button">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-8 h-8 mr-2 rounded-full"
+                            src="https://static.vecteezy.com/system/resources/previews/000/439/863/original/vector-users-icon.jpg"
+                            alt="user photo">
+                        Đăng nhập
+                        <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown menu -->
+                    <div id="dropdownAvatarName" ng-if="!isLogin"
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                            aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
+                            <li>
+                                <a href="../login.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Login</a>
+                            </li>
+                            <li>
+                                <a href="../register.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </a>
                 <button onclick="openSmMenu()" aria-label="open menu"
                     class="text-gray-800 dark:text-white md:hidden focus:outline-none focus:ring-2 focus:ring-gray-800 rounded hover:bg-gray-100 p-0.5">
