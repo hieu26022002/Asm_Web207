@@ -8,9 +8,9 @@ clientApp.run(function ($rootScope) {
     const token = localStorage.getItem("accessToken");
     if (token) {
         $rootScope.isLogin = true
-        $rootScope.nameUser = sessionStorage.getItem("userName");
-        $rootScope.avatarUser = sessionStorage.getItem("img");
-        $rootScope.email = sessionStorage.getItem("email")
+        $rootScope.nameUser = localStorage.getItem("userName");
+        $rootScope.avatarUser = localStorage.getItem("img");
+        $rootScope.email = localStorage.getItem("email")
     } else {
         $rootScope.isLogin = false;
         $rootScope.nameUser = ""
@@ -43,6 +43,7 @@ clientApp.controller("addCartController", function ($scope) {
                 name: product.name,
                 price: product.price,
                 img: product.img,
+                category: product.category_id,
                 quantity: 1
             }
             $scope.cartItems.push(newProduct)
@@ -54,6 +55,8 @@ clientApp.controller("addCartController", function ($scope) {
 clientApp.controller("paginateController", paginateController)
 clientApp.controller("listBestSellerController", listBestSellerController)
 clientApp.controller("detailProduct", detailProduct)
+clientApp.controller('showCart', showCart)
+clientApp.controller("checkoutController", checkoutController)
 // Route client App
 clientApp.config(($routeProvider, $locationProvider) => {
     $locationProvider.hashPrefix("")
@@ -72,9 +75,11 @@ clientApp.config(($routeProvider, $locationProvider) => {
             templateUrl: './pages/Client/blogs.html'
         }).when("/checkout", {
             templateUrl: './pages/Client/checkout.html',
+            controller: 'checkoutController'
         })
         .when("/cart", {
             templateUrl: './pages/Client/cart.html',
+            controller: 'showCart'
         }).otherwise({
             redirectTo: "/"
         })
