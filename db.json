@@ -421,6 +421,67 @@
       "finalPrice": 5810,
       "totalProducts": "8",
       "id": 2
+    },
+    {
+      "customer": {
+        "firstName": "gfdfgdf",
+        "lastName": "dfgdfg",
+        "address": "gdfgd",
+        "phoneNumber": "123456789"
+      },
+      "products": [
+        {
+          "id": 24,
+          "name": "Áo Thun NEWSEVEN Racing ",
+          "price": 250,
+          "img": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfp9r696pratfd",
+          "category": 1,
+          "quantity": 3
+        },
+        {
+          "id": 22,
+          "name": "Áo sơ mi nam ROWAY",
+          "price": 200,
+          "img": "https://down-vn.img.susercontent.com/file/0295c51f888a24617e9d09a917cc5621",
+          "category": 10,
+          "quantity": 5
+        },
+        {
+          "id": 17,
+          "name": "Áo khoác Varsity JOGGER ",
+          "price": 450,
+          "img": "https://down-vn.img.susercontent.com/file/sg-11134201-23010-me7tnmel3ulvab",
+          "category": 7,
+          "quantity": 2
+        },
+        {
+          "id": 3,
+          "name": "Quần Jeans đen trơn",
+          "price": 320,
+          "img": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgd9wctdssq2ed",
+          "category": 3,
+          "quantity": 2
+        },
+        {
+          "id": 26,
+          "name": "Áo Polo NEWSEVEN Pitying ",
+          "price": 310,
+          "img": "https://down-vn.img.susercontent.com/file/vn-11134201-23020-r5qdekkifunv0d",
+          "category": 4,
+          "quantity": 2
+        },
+        {
+          "id": 1,
+          "name": "Áo Thun Teelab Studio Icons TS176",
+          "price": 175,
+          "img": "https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgdg80aizilz45",
+          "category": 1,
+          "quantity": 2
+        }
+      ],
+      "finalPrice": 4170,
+      "totalProducts": "6",
+      "id": 3
     }
   ]
 }
