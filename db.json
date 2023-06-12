@@ -241,7 +241,7 @@
       "amount": 22
     }
   ],
-  "categories": [
+  "category": [
     {
       "id": 1,
       "name": "T-shirt"
