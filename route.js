@@ -48,6 +48,9 @@ clientApp.config(($routeProvider, $locationProvider) => {
             templateUrl: './pages/Client/blogs.html'
         }).when("/checkout", {
             templateUrl: './pages/Client/checkout.html',
+        })
+        .when("/cart", {
+            templateUrl: './pages/Client/cart.html',
         }).otherwise({
             redirectTo: "/"
         })

@@ -6,10 +6,16 @@
                 Summer Collection Vol-1</p>
         </div>
         <div class="py-6 lg:px-20 md:px-6 px-4">
-            <p class="font-normal text-sm leading-3 text-gray-600 dark:text-gray-300">Home / Shop</p>
-            <hr class="w-full bg-gray-200 my-6" />
+            <p class="font-normal text-xl leading-3 text-gray-600 dark:text-gray-300">Home / Shop</p>
+            <!-- <select id="countries" ng-model="selectedCategory" ng-change="filterProducts()"
+                class="mt-5 -mb-5 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Select category to filter</option>
+                <option ng-repeat="category in categories" value="{{ category.id }}">{{ category.name }}</option>
+            </select> -->
+        </div>
+        <hr class="w-full bg-gray-200 my-6" />
 
-            <!-- <div class="flex justify-between items-center">
+        <!-- <div class="flex justify-between items-center">
                 <div class="flex space-x-3 justify-center items-center text-gray-800 dark:text-white">
                     <img class="dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/product-grid-5-svg1.svg"
                         alt="toggler">
@@ -22,46 +28,76 @@
                     Showing 18 products</p>
             </div> -->
 
-            <div
-                class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
-                <div class="relative" ng-repeat="prd in products">
-                    <div class="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50">
-                        <p class="text-xs leading-3 text-gray-800">New</p>
-                    </div>
-                    <div class="relative group">
-                        <div
-                            class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
-                        </div>
-                        <img class="w-full" src="{{prd.img}}" alt="A girl Posing Image" />
-                        <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
-                            <button
-                                class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
-                                to cart</button>
-                            <a href="#product/{{prd.id}}">
-                                <button
-                                    class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">View Detail
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                    <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">{{ prd.name }}
-                    </p>
-                    <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">${{ prd.price }}
-                    </p>
-                    <!-- <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p> -->
+        <!-- <div ng-if="filter"
+            class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
+            <div class="relative" ng-repeat="prd in products">
+                <div class="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50">
+                    <p class="text-xs leading-3 text-gray-800">New</p>
                 </div>
+                <div class="relative group">
+                    <div
+                        class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                    </div>
+                    <img class="w-full" src="{{prd.img}}" alt="A girl Posing Image" />
+                    <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                        <button
+                            class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                            to cart</button>
+                        <a href="#product/{{prd.id}}">
+                            <button
+                                class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">View
+                                Detail
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">{{ prd.name }}
+                </p>
+                <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">${{ prd.price }}
+                </p>
             </div>
-
-            <div class="max-w-8xl mx-auto container pt-5 ">
-                <ul class="flex justify-center items-center">
-                    <li ng-repeat="page in pagination" ng-click="goToPage(page)">
-                        <span tabindex="0"
-                            class="focus:outline-none focus:bg-indigo-700 focus:text-white flex text-indigo-700 dark:text-indigo-400  bg-white dark:bg-gray-700  hover:bg-indigo-600 hover:text-white text-base leading-tight font-bold cursor-pointer shadow transition duration-150 ease-in-out mx-2 sm:mx-4 rounded px-3 py-2 focus:outline-none">{{page}}</span>
-                    </li>
-                </ul>
+        </div> -->
+        <div 
+            class="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-y-12 lg:gap-x-8 sm:gap-y-10 sm:gap-x-6 gap-y-6 lg:mt-12 mt-10">
+            <div class="relative" ng-repeat="prd in products">
+                <div class="absolute top-0 left-0 py-2 px-4 bg-white bg-opacity-50">
+                    <p class="text-xs leading-3 text-gray-800">New</p>
+                </div>
+                <div class="relative group">
+                    <div
+                        class="flex justify-center items-center opacity-0 bg-gradient-to-t from-gray-800 via-gray-800 to-opacity-30 group-hover:opacity-50 absolute top-0 left-0 h-full w-full">
+                    </div>
+                    <img class="w-full" src="{{prd.img}}" alt="A girl Posing Image" />
+                    <div class="absolute bottom-0 p-8 w-full opacity-0 group-hover:opacity-100">
+                        <button
+                            class="dark:bg-gray-800 dark:text-gray-300 font-medium text-base leading-4 text-gray-800 bg-white py-3 w-full">Add
+                            to cart</button>
+                        <a href="#product/{{prd.id}}">
+                            <button
+                                class="bg-transparent font-medium text-base leading-4 border-2 border-white py-3 w-full mt-2 text-white">View
+                                Detail
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <p class="font-normal dark:text-white text-xl leading-5 text-gray-800 md:mt-6 mt-4">{{ prd.name }}
+                </p>
+                <p class="font-semibold dark:text-gray-300 text-xl leading-5 text-gray-800 mt-4">${{ prd.price }}
+                </p>
+                <!-- <p class="font-normal dark:text-gray-300 text-base leading-4 text-gray-600 mt-4">2 colours</p> -->
             </div>
         </div>
+
+        <div class="max-w-8xl mx-auto container pt-5 ">
+            <ul class="flex justify-center items-center">
+                <li ng-repeat="page in pagination" ng-click="goToPage(page)">
+                    <span tabindex="0"
+                        class="focus:outline-none focus:bg-indigo-700 focus:text-white flex text-indigo-700 dark:text-indigo-400  bg-white dark:bg-gray-700  hover:bg-indigo-600 hover:text-white text-base leading-tight font-bold cursor-pointer shadow transition duration-150 ease-in-out mx-2 sm:mx-4 rounded px-3 py-2 focus:outline-none">{{page}}</span>
+                </li>
+            </ul>
+        </div>
     </div>
+</div>
 
 </div>
 </div>
