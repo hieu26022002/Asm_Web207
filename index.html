@@ -14,14 +14,15 @@
           }
         }
       </style>
-      <style>
+    <style>
         @layer utilities {
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
+
+            input[type="number"]::-webkit-inner-spin-button,
+            input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
         }
-      }
     </style>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 
@@ -46,6 +47,7 @@
         <!-- AngularJs -->
         <script src="./lib/angular.js"></script>
         <script src="./lib/angular-route.js"></script>
+        <script src="./js/cart.js"></script>
         <script src="./js/shop.js"></script>
         <script src="./js/index.js"></script>
         <script src="./route.js"></script>
@@ -54,10 +56,10 @@
             function logout() {
                 alert("Bạn đã đăng xuất!!!")
                 localStorage.removeItem("accessToken")
-                sessionStorage.removeItem("userId")
-                sessionStorage.removeItem("userName")
-                sessionStorage.removeItem("email")
-                sessionStorage.removeItem("img")
+                localStorage.removeItem("userId")
+                localStorage.removeItem("userName")
+                localStorage.removeItem("email")
+                localStorage.removeItem("img")
                 window.location.href = "/"
             }
         </script>
