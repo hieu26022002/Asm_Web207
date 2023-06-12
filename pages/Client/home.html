@@ -313,13 +313,14 @@
     </div>
     <div
         class="-mt-16 sm:-mt-48 lg:-mt-32 xl:-mt-40 2xl:container 2xl:mx-auto flex justify-center items-center space-y-4 px-4 md:px-6 2xl:px-0 mb-16">
-        <div  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-between gap-x-6 gap-y-5">
-            <div ng-repeat="bestPrd in bestSellerList" class="flex flex-col justify-center items-start p-2 bg-white dark:bg-gray-900">
+        <div ng-controller="addCartController" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-between gap-x-6 gap-y-5">
+            <div ng-repeat="bestPrd in bestSellerList"
+                class="flex flex-col justify-center items-start p-2 bg-white dark:bg-gray-900">
                 <div class="relative">
                     <img class="hidden lg:block" src="{{ bestPrd.img }}" alt="watch" />
                     <img class="lg:hidden" src="{{ bestPrd.img }}" alt="watch" />
 
-                    <button
+                    <button  ng-click="addToCart(bestPrd)"
                         class="top-4 right-4 absolute p-3.5 text-gray-600 dark:text-white hover:text-gray-500 flex justify-center items-center bg-white dark:bg-gray-900 rounded-full">
                         <svg class="fill-stroke" width="20" height="20" viewBox="0 0 20 20" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -335,10 +336,12 @@
                     </button>
                     <div class="flex justify-between mt-4">
                         <div>
-                            <p class="text-lg font-medium leading-none text-gray-800 dark:text-white">{{ bestPrd.name }}</p>
+                            <p class="text-lg font-medium leading-none text-gray-800 dark:text-white">{{ bestPrd.name }}
+                            </p>
                         </div>
                         <div>
-                            <p class="text-lg leading-none text-right text-gray-600 dark:text-white">${{ bestPrd.price }}</p>
+                            <p class="text-lg leading-none text-right text-gray-600 dark:text-white">${{ bestPrd.price
+                                }}</p>
                         </div>
                     </div>
                 </div>

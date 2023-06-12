@@ -27,6 +27,30 @@ clientApp.controller("headerController", function ($scope, $rootScope) {
 
 })
 
+clientApp.controller("addCartController", function ($scope) {
+    var cartItems = sessionStorage.getItem('cartItems');
+    $scope.cartItems = cartItems ? JSON.parse(cartItems) : [];
+
+    $scope.addToCart = function (product) {
+        const existingProduct = $scope.cartItems.find((item) => {
+            return item.id === product.id
+        });
+        if (existingProduct) {
+            existingProduct.quantity++;
+        } else {
+            const newProduct = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                img: product.img,
+                quantity: 1
+            }
+            $scope.cartItems.push(newProduct)
+        }
+        sessionStorage.setItem('cartItems', JSON.stringify($scope.cartItems));
+    }
+})
+
 clientApp.controller("paginateController", paginateController)
 clientApp.controller("listBestSellerController", listBestSellerController)
 clientApp.controller("detailProduct", detailProduct)
