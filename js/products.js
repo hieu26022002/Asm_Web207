@@ -107,7 +107,7 @@ function addController($scope, $http, $location) {
     $scope.categories = [];
     // Hàm lấy danh sách danh mục sản phẩm từ API
     $scope.getCategories = function () {
-        $http.get(API + '/categories')
+        $http.get(API + '/category')
             .then(function (response) {
                 $scope.categories = response.data;
             });
@@ -193,7 +193,7 @@ function editController($scope, $http, $routeParams,$location) {
     })
 
     $scope.getCategories = function () {
-        $http.get(API + '/categories')
+        $http.get(API + '/category')
             .then(function (response) {
                 $scope.categories = response.data;
             });

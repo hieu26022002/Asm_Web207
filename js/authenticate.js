@@ -42,6 +42,7 @@ function authController($scope, $http, $location) {
 
   $scope.changePassword = function () {
     // Kiểm tra mật khẩu mới và xác nhận mật khẩu
+    const idUser = localStorage.getItem("userId");
     if ($scope.newPassword !== $scope.confirmPassword) {
       alert('Mật khẩu mới và xác nhận mật khẩu không khớp.');
       return;
@@ -50,13 +51,15 @@ function authController($scope, $http, $location) {
     // Gửi yêu cầu PUT đến Json-server để đổi mật khẩu
     var data = {
       currentPassword: $scope.currentPassword,
-      newPassword: $scope.newPassword
+      password: $scope.newPassword
     };
 
-    $http.put('http://localhost:3000/users/1', data)
+    $http.patch(API + `/users/${idUser}`, data)
       .then(function (response) {
         // Mật khẩu đã được đổi thành công
         alert('Mật khẩu đã được đổi thành công!');
+        localStorage.clear()
+        $location.path("/login.html")
       }, function (error) {
         // Xử lý lỗi nếu có
         console.log(error);
